@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * CNTechnoLabs
+ * Copyright (C) 2021 CNTechnoLabs 
+ *
+ * @category  CNTechnoLabs
+ * @package   CNTechnoLabs_Autoinvoice
+ * @copyright Copyright (c) 2021 CNTechnoLabs
+ * @license   http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author    CNTechnoLabs
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_onepage_controller_success_action">
+       <observer name="CNTechnoLabs_Autoinvoice_observer_AutoInvoice" instance="CNTechnoLabs\Autoinvoice\Observer\Autoinvoice" />
+   </event>
+</config>

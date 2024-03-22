@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CNTechnoLabs
+ * Copyright (C) 2021 CNTechnoLabs 
+ *
+ * @category  CNTechnoLabs
+ * @package   CNTechnoLabs_Autoinvoice
+ * @copyright Copyright (c) 2021 CNTechnoLabs
+ * @license   http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author    CNTechnoLabs
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+
+                <!-- <resource id="CNTechnoLabs_Core::root">
+                    <resource id="CNTechnoLabs_Core::cn_modules">
+                        <resource id="CNTechnoLabs_Autoinvoice::root" title="CN TechnoLabs Auto Invoice" sortOrder="500">                            
+                        </resource>
+                    </resource>
+                </resource> -->
+                
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="CNTechnoLabs_Core::config_root">
+                               <resource id="CNTechnoLabs_Autoinvoice::autoinvoice_Configuration" title="CN TechnoLabs Auto Invoice" sortOrder="500" />
+                            </resource>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

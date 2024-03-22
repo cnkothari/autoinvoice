@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CNTechnoLabs
+ * Copyright (C) 2021 CNTechnoLabs 
+ *
+ * @category  CNTechnoLabs
+ * @package   CNTechnoLabs_Autoinvoice
+ * @copyright Copyright (c) 2021 CNTechnoLabs
+ * @license   http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author    CNTechnoLabs
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id='cntech' translate='label' sortOrder='200'>
+			<label>CNTechnoLabs</label>
+		</tab>
+		<section id='cntech_autoinvoice' translate='label' sortOrder='100' showInDefault='1' showInWebsite='1' showInStore='1'>
+			<class>separator-top</class>
+			<label>Autoinvoice</label>
+			<tab>cntech</tab>
+			<resource>CNTechnoLabs_Autoinvoice::autoinvoice_Configuration</resource>
+			<group id='general' translate='label' sortOrder='1' showInDefault='1' showInWebsite='1' showInStore='1'>
+				<label>General Configuration</label>
+				<field id='enable_autoinvoice' translate='label' type='select' sortOrder='1' showInDefault='1' showInWebsite='1' showInStore='1'>
+					<label>Module Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				
+				<field id="offline_payment_method" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Offline Payment Methods</label>
+                    <source_model>CNTechnoLabs\Autoinvoice\Model\Config\Source\OfflinePayment</source_model>
+					<comment>Please select Offline Payment methods on which you want to generate Invoice and Shipment</comment>
+                    <depends>
+                        <field id="enable_autoinvoice">1</field>
+                    </depends> 
+                </field>
+				
+				<field id="generate_auto_invoive" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Do You want to generate Invoice ?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable_autoinvoice">1</field>
+                    </depends>
+                </field>
+				
+				<field id="generate_auto_shipment" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Do You want to generate Shipment ?</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable_autoinvoice">1</field>
+                    </depends>
+                </field>
+				
+			
+                
+			</group>
+		</section>
+	</system>
+</config>
